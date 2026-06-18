@@ -9,6 +9,8 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-In%20Progress-orange.svg)]()
 
+![Building GPT From Scratch — Cover](images/bd1231f8-664f-45ea-b58f-215578a1d1f9.png)
+
 ---
 
 ## 📖 About
