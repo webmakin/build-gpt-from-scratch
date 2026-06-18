@@ -1,0 +1,23 @@
+# Core
+torch>=2.0
+numpy>=1.24
+
+# Tokenization (later chapters)
+tiktoken>=0.5
+sentencepiece>=0.1
+
+# Training utilities
+datasets>=2.14
+transformers>=4.30     # only for comparison / tokenizers, not for model code
+
+# Inference server (Part IX)
+fastapi>=0.100
+uvicorn>=0.23
+
+# Quantization / export (Part IX)
+gguf>=0.6
+
+# Development
+pytest>=7.4
+black>=23.0
+jupyter>=1.0
