@@ -25,11 +25,6 @@ permissions:
   pages: write
   id-token: write
 
-# Don't leave a stale deployment around if we push to a non-main branch.
-environment:
-  name: github-pages
-  url: ${{ steps.deployment.outputs.page_url }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
