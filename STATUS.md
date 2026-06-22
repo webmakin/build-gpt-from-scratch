@@ -8,7 +8,7 @@
 |---|---------|--------|
 | 1 | What is a Language Model? | ✅ Written + code extracted |
 | 2 | Mathematics Behind Transformers | ✅ Written + code extracted |
-| 3 | Building a Tokenizer | ⬜ |
+| 3 | Building a Tokenizer | ✅ Written + code extracted |
 | 4 | Embeddings | ⬜ |
 | 5 | Self Attention | ⬜ |
 | 6 | Multi-Head Attention | ⬜ |
