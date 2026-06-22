@@ -1,0 +1,38 @@
+[book]
+title = "Building GPT From Scratch"
+authors = ["Mohammed Asif"]
+language = "en"
+src = "src"
+description = "The complete engineering guide to building a Small Language Model from raw text to production — every line of code explained."
+
+[build]
+build-dir = "book"
+create-missing = true
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/webmakin/build-gpt-from-scratch"
+edit-url-template = "https://github.com/webmakin/build-gpt-from-scratch/edit/main/chapters/{path}"
+site-url = "/build-gpt-from-scratch/"
+mathjax-support = true
+additional-css = ["custom.css"]
+
+[output.html.fold]
+enable = true
+level = 1
+
+[output.html.playground]
+editable = false
+copyable = true
+copy-js = true
+
+[output.html.search]
+enable = true
+limit-results = 20
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 1
+boost-paragraph = 1
+expand = true
+heading-split-level = 3

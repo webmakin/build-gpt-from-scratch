@@ -1,0 +1,43 @@
+/* Custom theme tweaks for "Building GPT From Scratch" */
+
+/* Slightly tighter line-height for code-heavy content */
+.content pre code,
+.content code {
+    line-height: 1.45;
+}
+
+/* Make blockquotes (the epigraph at the top of each chapter) stand out */
+.content blockquote {
+    border-left: 4px solid #ff9800;
+    background: #fff8e1;
+    padding: 0.75em 1em;
+    margin: 1.5em 0;
+    font-style: italic;
+    border-radius: 0 4px 4px 0;
+}
+
+.content blockquote p {
+    margin: 0;
+}
+
+/* Style tables for the shape-conventions / vocab-size comparison tables */
+.content table {
+    margin: 1.25em 0;
+}
+
+.content table th {
+    background: #ff9800;
+    color: white;
+}
+
+/* Code output blocks (lines starting with `# → ...`) are a recurring pattern in this book */
+.content pre code .hljs-comment,
+.content pre code .hljs-doctag {
+    color: #6a737d;
+    font-style: italic;
+}
+
+/* Make chapter titles in the sidebar more prominent */
+.chapter li.chapter-item strong {
+    color: #ff9800;
+}

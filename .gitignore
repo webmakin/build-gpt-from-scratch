@@ -29,3 +29,9 @@ datasets/*.jsonl
 # OS
 .DS_Store
 Thumbs.db
+
+# mdBook build output
+book/book/
+
+# Chapter HTML exports (build artifacts, not source)
+chapters/*.html

@@ -187,6 +187,14 @@ build-gpt-from-scratch/
 
 ---
 
+# 📖 Read the Book
+
+The full book is rendered as a navigable website with sidebar, search, and code highlighting:
+
+**👉 [webmakin.github.io/build-gpt-from-scratch](https://webmakin.github.io/build-gpt-from-scratch/)**
+
+Built with [mdBook](https://rust-lang.github.io/mdBook/) and auto-deployed to GitHub Pages on every push to `main`.
+
 # 📖 Chapters
 
 | # | Chapter | Status |

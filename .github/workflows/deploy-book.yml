@@ -1,0 +1,63 @@
+name: Deploy Book
+
+# Build the mdBook site and deploy it to GitHub Pages on every push to main.
+# Also runs on manual dispatch for ad-hoc rebuilds.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "book/**"
+      - "chapters/**"
+      - "code/**"
+      - ".github/workflows/deploy-book.yml"
+  workflow_dispatch:
+
+# Allow one concurrent deployment, queueing newer runs and canceling
+# in-progress ones.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+# Required for GitHub Pages deployment.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Don't leave a stale deployment around if we push to a non-main branch.
+environment:
+  name: github-pages
+  url: ${{ steps.deployment.outputs.page_url }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install mdBook
+        uses: taiki-e/install-action@mdbook
+
+      - name: Build the book
+        working-directory: book
+        run: mdbook build
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: book/book
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
