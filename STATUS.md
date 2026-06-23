@@ -17,7 +17,7 @@
 | 9 | Training a GPT | ✅ Written + code extracted |
 | 10 | Fine-Tuning | ✅ Written + code extracted |
 | 11 | Inference Optimization | ✅ Written + code extracted |
-| 12 | Deployment | ⬜ |
+| 12 | Deployment | ✅ Written + code extracted |
 
 ## Immediate Focus
 
