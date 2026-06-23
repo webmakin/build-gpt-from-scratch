@@ -13,7 +13,7 @@
 | 5 | Self Attention | ✅ Written + code extracted |
 | 6 | Multi-Head Attention | ✅ Written + code extracted |
 | 7 | Transformer Blocks | ✅ Written + code extracted |
-| 8 | GPT Architecture | ⬜ |
+| 8 | GPT Architecture | ✅ Written + code extracted |
 | 9 | Training a GPT | ⬜ |
 | 10 | Fine-Tuning | ⬜ |
 | 11 | Inference Optimization | ⬜ |
