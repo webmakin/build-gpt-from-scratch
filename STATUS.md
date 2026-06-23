@@ -16,7 +16,7 @@
 | 8 | GPT Architecture | ✅ Written + code extracted |
 | 9 | Training a GPT | ✅ Written + code extracted |
 | 10 | Fine-Tuning | ✅ Written + code extracted |
-| 11 | Inference Optimization | ⬜ |
+| 11 | Inference Optimization | ✅ Written + code extracted |
 | 12 | Deployment | ⬜ |
 
 ## Immediate Focus
