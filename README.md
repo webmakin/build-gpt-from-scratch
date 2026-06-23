@@ -7,7 +7,7 @@
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red.svg)](https://pytorch.org)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-In%20Progress-orange.svg)]()
+[![Status](https://img.shields.io/badge/Status-Complete-brightgreen.svg)]()
 
 ![Building GPT From Scratch — Cover](images/bd1231f8-664f-45ea-b58f-215578a1d1f9.png)
 

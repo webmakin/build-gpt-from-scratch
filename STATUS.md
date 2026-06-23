@@ -1,8 +1,8 @@
 # Project Status
 
-> Last updated: 2026-06-18
+> Last updated: 2026-06-23
 
-## Current Phase: Foundation (Part I–II)
+## Current Phase: COMPLETE (12/12 chapters)
 
 | # | Chapter | Status |
 |---|---------|--------|
@@ -19,11 +19,13 @@
 | 11 | Inference Optimization | ✅ Written + code extracted |
 | 12 | Deployment | ✅ Written + code extracted |
 
-## Immediate Focus
+## Book
 
-The MVP path is Chapters 1–8: everything needed to train a working GPT on a small dataset (Tiny Shakespeare / WikiText-2).
-
-Later phases (distributed training, LoRA, deployment) will follow once the core model ships.
+- **Live site:** https://webmakin.github.io/build-gpt-from-scratch/
+- **Auto-deploys** on every push to `main` via GitHub Actions
+- **Total prose:** ~200KB across 12 chapters (~4,400 lines of markdown)
+- **Total code:** ~3,000 lines of Python across `code/chapter01/`–`code/chapter12/`
+- Every chapter has a runnable `code/chapterN/feature.py` script with verified output
 
 ## Repo
 
