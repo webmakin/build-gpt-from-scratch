@@ -10,7 +10,7 @@
 | 2 | Mathematics Behind Transformers | ✅ Written + code extracted |
 | 3 | Building a Tokenizer | ✅ Written + code extracted |
 | 4 | Embeddings | ✅ Written + code extracted |
-| 5 | Self Attention | ⬜ |
+| 5 | Self Attention | ✅ Written + code extracted |
 | 6 | Multi-Head Attention | ⬜ |
 | 7 | Transformer Blocks | ⬜ |
 | 8 | GPT Architecture | ⬜ |
