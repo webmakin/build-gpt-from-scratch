@@ -12,7 +12,7 @@
 | 4 | Embeddings | ✅ Written + code extracted |
 | 5 | Self Attention | ✅ Written + code extracted |
 | 6 | Multi-Head Attention | ✅ Written + code extracted |
-| 7 | Transformer Blocks | ⬜ |
+| 7 | Transformer Blocks | ✅ Written + code extracted |
 | 8 | GPT Architecture | ⬜ |
 | 9 | Training a GPT | ⬜ |
 | 10 | Fine-Tuning | ⬜ |
