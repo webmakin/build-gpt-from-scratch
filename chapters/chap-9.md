@@ -16,9 +16,9 @@ Training changes the weights so that `P(token_t | tokens_<t)` matches the actual
 
 The loss is **negative log-likelihood of the actual next token**:
 
-```
-L = -1/T * sum_t  log P_θ(actual_token_t | tokens_1..t-1)
-```
+\\[
+\mathcal{L} = -\frac{1}{T} \sum_{t=1}^{T} \log P_\theta(\text{token}_t \mid \text{tokens}_{1..t-1})
+\\]
 
 Minimizing this loss = maximizing the probability the model assigns to the training data. After enough updates, the model has learned enough of the structure of language to generate coherent text.
 
@@ -279,9 +279,10 @@ The line `torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)` is d
 After training, your model has a `val_loss` around 1.5 for Tiny Shakespeare after a few thousand steps with the full 30M model. A small (~7M parameter) model trained for 500 steps reaches `val_loss ≈ 5.7` — a useful demonstration but nowhere near coherent text. The full 30M model needs more steps and more parameters to get below 2.0. What does that number mean?
 
 Loss is the negative log-likelihood per token:
-```
-val_loss = -1/T * sum_t log P(actual_token_t | context)
-```
+
+\\[
+\text{val\_loss} = -\frac{1}{T} \sum_{t=1}^{T} \log P(\text{actual\_token}_t \mid \text{context})
+\\]
 
 A few reference values:
 

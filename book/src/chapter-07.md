@@ -44,14 +44,16 @@ Two operations (attention, FFN), each with a residual bypass, each preceded by a
 There are two ordering conventions in the wild:
 
 **Post-norm (original Transformer, 2017):**
-```
-y = x + Sublayer(LayerNorm(x))     # GPT-2 uses this
-```
+
+\\[
+y = x + \text{Sublayer}(\text{LayerNorm}(x))
+\\]
 
 **Pre-norm (most modern models: GPT-3, Llama, Mistral):**
-```
-y = x + LayerNorm(Sublayer(x))     # More stable for deep stacks
-```
+
+\\[
+y = x + \text{LayerNorm}(\text{Sublayer}(x))
+\\]
 
 Both work. Pre-norm is easier to train without warmup. Post-norm can reach slightly better final quality if you have a good learning rate schedule. For our SLM we'll use **pre-norm** because it's more forgiving.
 
@@ -112,9 +114,10 @@ class LayerNorm(nn.Module):
 ```
 
 In **pre-norm** blocks, LayerNorm is applied *inside* the residual:
-```
-y = x + Sublayer(LayerNorm(x))
-```
+
+\\[
+y = x + \text{Sublayer}(\text{LayerNorm}(x))
+\\]
 
 In **post-norm** blocks, LayerNorm is applied *outside* the residual:
 ```
@@ -129,9 +132,9 @@ Pre-norm doesn't normalize the residual stream itself, only the input to each su
 
 Modern LLMs (Llama, Mistral) use **RMSNorm** instead of LayerNorm. It drops the mean-centering step and the learnable shift:
 
-```
-y = (x / sqrt(mean(x²) + eps)) * gamma
-```
+\\[
+y = \frac{x}{\sqrt{\text{mean}(x^2) + \epsilon}} \cdot \gamma
+\\]
 
 Half the compute of LayerNorm, identical quality in practice, and ~10-20% faster on GPU. The math is so close to LayerNorm that the difference is essentially noise for models above a few hundred million parameters.
 
@@ -166,10 +169,9 @@ The hidden dimension is typically `4 × d_model`. So for `d_model = 768`, the FF
 
 Modern LLMs (Llama, PaLM) use **SwiGLU** instead of plain ReLU. It has three matrices instead of two, but the hidden dimension is scaled down by 2/3 to keep the parameter count constant:
 
-```
-SwiGLU(x) = (Swish(x W_gate) ⊙ (x W_up)) W_down
-           = (silu(x W_gate) * (x W_up)) W_down
-```
+\\[
+\text{SwiGLU}(x) = \big(\text{SiLU}(x W_\text{gate}) \odot (x W_\text{up})\big) W_\text{down}
+\\]
 
 The `W_gate` and `W_up` both expand from `d_model → (8/3) × d_model` (rounded to a multiple of 64 for hardware), and `W_down` projects back. The total parameter count per FFN is `3 × d_model × (8/3 × d_model) = 8 × d_model²` — same as a 4× expansion ReLU FFN's `2 × 4 × d_model² = 8 × d_model²`.
 

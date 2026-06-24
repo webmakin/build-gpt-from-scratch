@@ -160,9 +160,9 @@ A language model is simply a mathematical function.
 
 We can write it as:
 
-[
-P(x_t \mid x_1, x_2, ..., x_{t-1})
-]
+\\[
+P(x_t \mid x_1, x_2, \ldots, x_{t-1})
+\\]
 
 This notation looks intimidating, but it means only one thing:
 
@@ -246,17 +246,17 @@ We can count what follows the word **like**.
 
 The probability of each next word is simply its frequency divided by the total count:
 
-[
+\\[
 P(\text{pizza} \mid \text{like}) = \frac{2}{4} = 0.5
-]
+\\]
 
-[
+\\[
 P(\text{pasta} \mid \text{like}) = \frac{1}{4} = 0.25
-]
+\\]
 
-[
+\\[
 P(\text{coffee} \mid \text{like}) = \frac{1}{4} = 0.25
-]
+\\]
 
 We've just built a basic statistical language model—no neural networks required.
 

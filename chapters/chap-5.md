@@ -68,16 +68,19 @@ The three matrices are independent and learned. After training, they specialize:
 
 Given queries `Q` and keys `K`, we compute every pairwise similarity:
 
-```
-scores = Q @ K.T            # [T, T]    — score[t, s] = how much token t attends to token s
-```
+\\[
+\text{scores} = Q K^\top \in \mathbb{R}^{T \times T}
+\\]
 
 Then we scale and normalize:
 
-```
-weights = softmax(scores / sqrt(d_k), dim=-1)    # [T, T]    — each row sums to 1
-output  = weights @ V                            # [T, d_v]  — weighted sum of values
-```
+\\[
+\text{weights} = \text{softmax}\!\left(\frac{\text{scores}}{\sqrt{d_k}}\right) \in \mathbb{R}^{T \times T}
+\\]
+
+\\[
+\text{output} = \text{weights} \cdot V \in \mathbb{R}^{T \times d_v}
+\\]
 
 That's it. The `1/sqrt(d_k)` divisor (Section 5.7) keeps the softmax from saturating when `d_k` is large.
 

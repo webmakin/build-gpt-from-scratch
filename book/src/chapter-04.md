@@ -193,10 +193,14 @@ The model now has a unique "coordinate" for `(token, position)` pairs. "Cat at p
 
 The original Transformer paper ("Attention Is All You Need", 2017) used *fixed* sinusoidal positions instead of learned ones:
 
-```
-PE(pos, 2i)   = sin(pos / 10000^(2i / d_model))
-PE(pos, 2i+1) = cos(pos / 10000^(2i / d_model))
-```
+\\[
+\text{PE}(pos, 2i)   = \sin\!\left(\frac{pos}{10000^{2i / d_\text{model}}}\right)
+\\]
+
+\\[
+\text{PE}(pos, 2i+1) = \cos\!\left(\frac{pos}{10000^{2i / d_\text{model}}}\right)
+\\]
+
 
 Why? Two reasons that turned out to be partially wrong but interesting:
 
