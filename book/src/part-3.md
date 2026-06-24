@@ -1,6 +1,6 @@
 # Part III — Training
 
-Now that we have a working architecture, we need to actually train it. These chapters cover dataset creation, the training loop, optimizers, learning rate schedules, mixed precision, and gradient checkpointing — the bag of tricks that makes training a GPT tractable on a single GPU.
+A working architecture is a sculpture. Training is the moment it becomes a tool. This part puts the pieces together into a full GPT, then teaches it to predict text by minimizing cross-entropy loss.
 
-- [Chapter 8: GPT Architecture *(coming soon)*](./chapter-08.md)
-- [Chapter 9: Training a GPT *(coming soon)*](./chapter-09.md)
+- [Chapter 8: GPT Architecture](./chapter-08.md)
+- [Chapter 9: Training a GPT](./chapter-09.md)

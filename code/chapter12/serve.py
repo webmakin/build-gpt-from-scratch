@@ -392,11 +392,14 @@ if __name__ == "__main__":
 
         @app.post("/generate")
         def generate(req: dict):
-            ids = [0] * 5   # placeholder
+            # Minimal demo: tokenize with a fixed mock vocab, run one forward pass.
+            # A real server would use the trained tokenizer (tiktoken) and stream
+            # tokens. See chapter 12 §12.3 for the full FastAPI skeleton.
+            ids = [0] * 5   # toy 5-token "prompt"
             x = torch.tensor([ids])
             with torch.no_grad():
                 logits, _ = loaded_model(x)
-            return {"shape": list(logits.shape)}
+            return {"shape": list(logits.shape), "note": "demo endpoint"}
 
         print(f"Starting server on port {args.port}...")
         uvicorn.run(app, host="0.0.0.0", port=args.port)
